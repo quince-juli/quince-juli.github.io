@@ -88,12 +88,6 @@
   <link async="" rel="stylesheet" href="invitacion_archivos/normalize.css">
   <link async="" rel="stylesheet" href="invitacion_archivos/style.css">
   <link async="" rel="stylesheet" href="invitacion_archivos/bootstrap.min_v2.1.css">
-  <link async="" rel="stylesheet" href="invitacion_archivos/owl.carousel.min.css">
-  <link async="" rel="stylesheet" href="invitacion_archivos/owl.theme.default.min.css" media="all"
-    onload="if(media!='all')media='all'">
-  <noscript>
-    <link rel="stylesheet" href="../../css/owl.theme.default.min.css">
-  </noscript>
   <link async="" rel="stylesheet" href="invitacion_archivos/bootstrap-datepicker.css" media="all"
     onload="if(media!='all')media='all'">
   <noscript>
@@ -278,7 +272,8 @@
             <button id="fiesta-button" class="btn button-lila mb-2 text-uppercase rounded-pill btn-sm"><i
                 class="nf nf-fa-calendar" aria-hidden="true"></i> Agendar</button>
             <button class="btn button-lila mb-2 text-uppercase rounded-pill btn-sm" data-fancybox="" data-src="#map2"
-              data-animation-duration="700" href="javascript:;"><i class="nf nf-fa-location_dot" aria-hidden="true"></i> ¿CÓMO
+              data-animation-duration="700" href="javascript:;"><i class="nf nf-fa-location_dot" aria-hidden="true"></i>
+              ¿CÓMO
               LLEGAR?</button>
 
             <script type="application/javascript">
@@ -309,7 +304,8 @@
                   scrolling="no" marginheight="0" marginwidth="0" style="border:0;" allowfullscreen="" loading="lazy"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20249.33782019907!2d-58.45534930858854!3d-34.64161931226741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc987cf242445%3A0x1160fa308a6ffa42!2sVictoria%20Palace%20Salones%20de%20Estilo!5e0!3m2!1ses!2sar!4v1768075634884!5m2!1ses!2sar"></iframe><a
                   href="https://maps.app.goo.gl/SxGa86WLgNnrcZer6" target="_blank"
-                  class="mt-2 btn btn-outline-dark btn-small"><i class="nf nf-fa-location_dot" aria-hidden="true"></i> Ver en
+                  class="mt-2 btn btn-outline-dark btn-small"><i class="nf nf-fa-location_dot" aria-hidden="true"></i>
+                  Ver en
                   la app de Google Maps</a></div>
             </div>
 
@@ -336,77 +332,99 @@
 
         </div>
       </div>
-      <div class="presupuesto slide-one-item home-slider owl-carousel pb-0 owl-loaded owl-drag"
-        style="background-color: : transparent">
+      <style>
+        /* --- ESTILOS DEL CARRUSEL RESPONSIVE --- */
+        .carousel-wrapper {
+          position: relative;
+          width: 100%;
+          /* Un poco más ancho para que se luzcan las 3 fotos */
+          margin: 0 auto;
+          overflow: hidden;
+          padding: 20px 0;
+        }
+
+        .carousel-track {
+          display: flex;
+          gap: 10px;
+          /* Espacio entre fotos */
+          width: 100%;
+          /* Importante: aseguramos que el track ocupe el ancho disponible */
+        }
+
+        .carousel-track img {
+          height: auto;
+          object-fit: cover;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+          /* POR DEFECTO (Escritorio/Tablet): Entran 3 imágenes */
+          /* La fórmula es: (100% del ancho - 2 espacios de 10px) / 3 fotos */
+          flex: 0 0 calc((100% - 20px) / 3);
+          max-width: calc((100% - 20px) / 3);
+        }
+
+        /* --- MEDIA QUERY (Móviles) --- */
+        @media (max-width: 600px) {
+          .carousel-track img {
+            /* Si es menor a 600px, la foto ocupa todo el ancho */
+            flex: 0 0 100%;
+            max-width: 100%;
+          }
+        }
+
+        /* Botones (igual que antes) */
+        .carousel-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          color: rgba(255, 255, 255, 0.7);
+          background: rgba(94, 94, 94, 0.2);
+          border: 2px solid rgba(255, 255, 255, 0.7);
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          cursor: pointer;
+          z-index: 10;
+          font-size: 1.2rem;
+          /* color: var(--color-secondary); */
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.3s;
+        }
+
+        .carousel-btn:hover {
+          background: rgba(0, 0, 0, 0.7);
+        }
+
+        .btn-prev {
+          left: 10px;
+        }
+
+        .btn-next {
+          right: 10px;
+        }
+      </style>
 
 
+      <div class="carousel-wrapper">
+        <button class="carousel-btn btn-prev" id="btn-prev">
+          <i class="nf nf-fa-chevron_left"></i>
+        </button>
 
-
-
-
-
-
-
-
-
-
-        <div class="owl-stage-outer">
-          <div class="owl-stage" style="transition: 0.25s; width: 14544px; transform: translate3d(-3636px, 0px, 0px);">
-            <div class="owl-item cloned" style="width: 586px; margin-right: 20px;"><img
-                src="invitacion_archivos/foto7.jpg" alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item cloned" style="width: 586px; margin-right: 20px;"><img
-                src="invitacion_archivos/foto8.jpg" alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item cloned" style="width: 586px; margin-right: 20px;"><img
-                src="invitacion_archivos/foto9.jpg" alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item cloned" style="width: 586px; margin-right: 20px;"><img
-                src="invitacion_archivos/foto10.jpg" alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item cloned" style="width: 586px; margin-right: 20px;"><img
-                src="invitacion_archivos/foto11.jpg" alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item cloned" style="width: 586px; margin-right: 20px;"><img
-                src="invitacion_archivos/foto12.jpg" alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item active center" style="width: 586px; margin-right: 20px;"><img
-                src="invitacion_archivos/foto1.jpg" alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item" style="width: 586px; margin-right: 20px;"><img src="invitacion_archivos/foto2.jpg"
-                alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item" style="width: 586px; margin-right: 20px;"><img src="invitacion_archivos/foto3.jpg"
-                alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item" style="width: 586px; margin-right: 20px;"><img src="invitacion_archivos/foto4.jpg"
-                alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item" style="width: 586px; margin-right: 20px;"><img src="invitacion_archivos/foto5.jpg"
-                alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item" style="width: 586px; margin-right: 20px;"><img src="invitacion_archivos/foto6.jpg"
-                alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item" style="width: 586px; margin-right: 20px;"><img src="invitacion_archivos/foto7.jpg"
-                alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item" style="width: 586px; margin-right: 20px;"><img src="invitacion_archivos/foto8.jpg"
-                alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item" style="width: 586px; margin-right: 20px;"><img src="invitacion_archivos/foto9.jpg"
-                alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item" style="width: 586px; margin-right: 20px;"><img src="invitacion_archivos/foto10.jpg"
-                alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item" style="width: 586px; margin-right: 20px;"><img src="invitacion_archivos/foto11.jpg"
-                alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item" style="width: 586px; margin-right: 20px;"><img src="invitacion_archivos/foto12.jpg"
-                alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item cloned" style="width: 586px; margin-right: 20px;"><img
-                src="invitacion_archivos/foto1.jpg" alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item cloned" style="width: 586px; margin-right: 20px;"><img
-                src="invitacion_archivos/foto2.jpg" alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item cloned" style="width: 586px; margin-right: 20px;"><img
-                src="invitacion_archivos/foto3.jpg" alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item cloned" style="width: 586px; margin-right: 20px;"><img
-                src="invitacion_archivos/foto4.jpg" alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item cloned" style="width: 586px; margin-right: 20px;"><img
-                src="invitacion_archivos/foto5.jpg" alt="Imagen" class="img-fluid"></div>
-            <div class="owl-item cloned" style="width: 586px; margin-right: 20px;"><img
-                src="invitacion_archivos/foto6.jpg" alt="Imagen" class="img-fluid"></div>
-          </div>
+        <div class="carousel-track" id="gallery-track">
+          <img src="invitacion_archivos/foto2.jpg" alt="Foto 2">
+          <img src="invitacion_archivos/foto3.jpg" alt="Foto 3">
+          <img src="invitacion_archivos/foto4.jpg" alt="Foto 4">
+          <img src="invitacion_archivos/foto5.jpg" alt="Foto 5">
+          <img src="invitacion_archivos/foto6.jpg" alt="Foto 6">
+          <img src="invitacion_archivos/foto7.jpg" alt="Foto 7">
         </div>
-        <div class="owl-nav">
-          <div class="owl-prev"><span class="icon-keyboard_arrow_left"></span></div>
-          <div class="owl-next"><span class="icon-keyboard_arrow_right"></span></div>
-        </div>
-        <div class="owl-dots disabled"></div>
+
+        <button class="carousel-btn btn-next" id="btn-next">
+          <i class="nf nf-fa-chevron_right"></i>
+        </button>
       </div>
     </div>
 
@@ -541,7 +559,8 @@
             <!-- referencias dress -->
             <div style="display: none;" id="dress" class="animated-modal p-4">
               <div class="mt-4 text-center" data-selectable="true">
-                <p class="text-center h3 mb-0"><i class="text-black nf nf-md-human_male_female" aria-hidden="true"></i></p>
+                <p class="text-center h3 mb-0"><i class="text-black nf nf-md-human_male_female" aria-hidden="true"></i>
+                </p>
                 <p class="text-center text-black mb-3 font-weight-bolder border-bottom border-dark">Sugerencias de
                   estilos</p>
 
@@ -808,7 +827,8 @@
         <div style="display: none;" id="regalo" class="animated-modal p-4">
           <div class="mt-4" data-selectable="true">
             <div class="mb-5">
-              <p class="text-center h3 mb-0"><i class="text-black nf nf-md-credit_card_settings_outline" aria-hidden="true"></i></p>
+              <p class="text-center h3 mb-0"><i class="text-black nf nf-md-credit_card_settings_outline"
+                  aria-hidden="true"></i></p>
               <p class="text-center text-black mb-3 font-weight-bolder border-bottom border-dark">Billetera digital</p>
               <p class="mb-2 font-weight-lighter">Envía el dinero desde el siguiente link</p>
               <p><a href="" target="_blank" class="btn btn-block mb-4 text-uppercase button-gris">Enviar dinero</a></p>
@@ -911,7 +931,6 @@
   <script src="invitacion_archivos/jquery-3.5.1.min.js"></script>
   <script defer="defer" src="invitacion_archivos/popper.min.js"></script>
   <script defer="defer" src="invitacion_archivos/bootstrap.min.js"></script>
-  <script src="invitacion_archivos/owl.carousel.min.js"></script>
   <script src="invitacion_archivos/jquery.countdown.min.js"></script>
   <script defer="defer" src="invitacion_archivos/jquery.easing.1.3.js"></script>
   <script src="invitacion_archivos/jquery.fancybox.min.js"></script>
@@ -966,30 +985,6 @@
   </script>
 
 
-
-  <script>$('.presupuesto').owlCarousel({
-      center: true,
-      margin: 20,
-      autoplay: true,
-      loop: true,
-      nav: true,
-      dots: false,
-      navText: ['<span class="icon-keyboard_arrow_left">', '<span class="icon-keyboard_arrow_right">'],
-      responsiveClass: true,
-      responsive: {
-        0: {
-          items: 1,
-          pagination: false,
-        },
-        600: {
-          items: 3,
-        },
-        1000: {
-          items: 3,
-        }
-      }
-    })  
-  </script>
 
   <script type="text/javascript">
     /* =========================================
@@ -1209,6 +1204,92 @@
     <script
       type="text/javascript"> var intervalId = setInterval(function () {if (MtPopUpList) {LanguageMenu = new MtPopUpList(); var langMenu = document.getElementById(LanguageMenu_popupid); var origLangDiv = document.createElement("div"); origLangDiv.id = "OriginalLanguageDiv"; origLangDiv.innerHTML = "<span id='OriginalTextSpan'>ORIGINAL: </span><span id='OriginalLanguageSpan'></span>"; langMenu.appendChild(origLangDiv); LanguageMenu.Init('LanguageMenu', LanguageMenu_keys, LanguageMenu_values, LanguageMenu_callback, LanguageMenu_popupid); window["LanguageMenu"] = LanguageMenu; clearInterval(intervalId);} }, 1); </script>
   </div>
+  <script>
+    // --- LÓGICA DEL CARRUSEL RESPONSIVE INFINITO ---
+
+    const track = document.getElementById('gallery-track');
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+
+    let autoScroll;
+    let isTransitioning = false;
+
+    // Función auxiliar para obtener el ancho dinámico actual
+    function getMoveAmount() {
+      const firstItem = track.firstElementChild;
+      // Obtenemos el ancho de la imagen + el gap (10px)
+      // offsetWidth nos da el ancho real del elemento en pantalla
+      return firstItem.offsetWidth + 10;
+    }
+
+    // Mover a la Siguiente (Derecha)
+    function moveNext() {
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      const moveAmount = getMoveAmount(); // Calculamos cuánto mover AHORA
+
+      track.style.transition = "transform 0.5s ease-in-out";
+      track.style.transform = `translateX(-${moveAmount}px)`;
+
+      setTimeout(() => {
+        track.style.transition = "none";
+
+        // Movemos el primero al final
+        const firstItem = track.firstElementChild;
+        track.appendChild(firstItem);
+
+        track.style.transform = "translateX(0)";
+        isTransitioning = false;
+      }, 500);
+    }
+
+    // Mover a la Anterior (Izquierda)
+    function movePrev() {
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      const moveAmount = getMoveAmount(); // Calculamos cuánto mover AHORA
+
+      track.style.transition = "none";
+      const lastItem = track.lastElementChild;
+      track.prepend(lastItem);
+
+      // Desplazamos visualmente para compensar la inserción
+      track.style.transform = `translateX(-${moveAmount}px)`;
+
+      // Forzar reflow
+      void track.offsetWidth;
+
+      track.style.transition = "transform 0.5s ease-in-out";
+      track.style.transform = "translateX(0)";
+
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 500);
+    }
+
+    // --- AUTOMATIZACIÓN ---
+    btnNext.addEventListener('click', () => {moveNext(); resetTimer();});
+    btnPrev.addEventListener('click', () => {movePrev(); resetTimer();});
+
+    function startAutoPlay() {
+      autoScroll = setInterval(() => {moveNext();}, 3000);
+    }
+
+    function stopAutoPlay() {clearInterval(autoScroll);}
+
+    function resetTimer() {
+      stopAutoPlay();
+      startAutoPlay();
+    }
+
+    startAutoPlay();
+
+    const wrapper = document.querySelector('.carousel-wrapper');
+    wrapper.addEventListener('mouseenter', stopAutoPlay);
+    wrapper.addEventListener('mouseleave', startAutoPlay);
+  </script>
 </body>
 
 </html>
