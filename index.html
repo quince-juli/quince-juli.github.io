@@ -493,34 +493,12 @@
             <p class="text-center">¿Qué canciones son infaltables?<br>
               Ayudame con la selección de canciones</p>
             <div class="text-center">
-              <a class="btn button-lila mb-2 text-uppercase rounded-pill btn-sm" href="#" target="_blank">Ir a
-                Spotify</a>
-              <button class="btn button-lila mb-2 text-uppercase rounded-pill btn-sm" data-fancybox=""
-                data-src="#canciones" data-animation-duration="700" href="javascript:;">Sugerir canción</button>
-              <!-- form sugerencia de canciones PHP -->
-              <div style="display: none;" id="canciones" class="animated-modal p-4">
-                <div class="text-center" data-selectable="true">
-                  <!-- permanecer en la página -->
-                  <iframe id="myIframe" name="myIframe" width="0" height="0" frameborder="0"></iframe>
-                  <form action="a-musica.php" method="post" target="myIframe">
-                    <!-- /permanecer en la página -->
-                    <div class="form-group">
-                      <label for="fname">
-                        <p class="mb-1"><img class="img-fluid mb-0" src="invitacion_archivos/icon-music-b.png"
-                            width="80" alt=""></p>
-                        <p class="text-center text-black mb-3 font-weight-bolder border-bottom border-dark">Sugerir
-                          canciones</p>
-                        <p class="mb-1">Por favor completar el nombre de la canción y el intérprete.</p>
-                        <p class="text-small-sm mb-2 text-black-50">ej: Tu Amor - Juan Fulano</p>
-                      </label>
-                      <input type="text" id="fname" name="fname" class="form-control border mb-3 border-dark">
-                      <input class="btn button-gris mb-2 text-uppercase" type="submit" value="ENVIAR"
-                        onclick="parent.jQuery.fancybox.close();">
-                    </div>
-                  </form>
-                </div>
+
+              <div data-customgform="cmkbt609s007iwn5kvc3of5yj" data-mode="popup" data-label="SUGERIR CANCION"
+                data-style="border: none; appearance: none; cursor: pointer; padding: 7px 17px; display: inline-block; background: #b2a6ce; font-size: 16px; color: #ffffff; border-radius: 27px; font-weight: 500;">
               </div>
-              <!-- /form sugerencia de canciones PHP -->
+              <script async src="https://cdn.customgform.com/cgf.js"></script>
+
             </div>
           </div>
         </div>
