@@ -64,10 +64,12 @@
   <!-- <meta property="og:type" content="website"> -->
   <!-- <meta property="og:url" content="https://amoinvitar.com/ar/lila15/"> -->
   <!-- <meta property="og:image" content="https://amoinvitar.com/images/banner-lila15.jpg"> -->
-  <meta property="og:image" content="https://github.com/leithcoX/quince/blob/d8ad4f2284e0b791f21aceebd3abba17d9833a15/invitacion_archivos/preview.jpg?raw=true"/> <!-- Absolute URL -->  
-  <meta property="og:image:width" content="512" />  
-  <meta property="og:image:height" content="512" />  
-  <meta property="og:image:type" content="image/jpeg" /> <!-- Use image/png for PNGs -->  
+  <meta property="og:image"
+    content="https://github.com/leithcoX/quince/blob/d8ad4f2284e0b791f21aceebd3abba17d9833a15/invitacion_archivos/preview.jpg?raw=true" />
+  <!-- Absolute URL -->
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:image:type" content="image/jpeg" /> <!-- Use image/png for PNGs -->
   <!-- <meta property="og:description" -->
   <!--   content="Amo Invitar - Tu Invitación Online interactiva, original y creativa para casamientos, 15 años, fiestas y eventos. RSVP digital, ubicación con GMaps, regalos, dress code, Instagram wall, cuenta regresiva, Save The Date tarjeta y fotográfico, invitación en video y mucho más."> -->
   <!-- <meta property="og:site_name" content="Amo Invitar! | Invitaciones digitales"> -->
@@ -217,7 +219,7 @@
                   gustaría ingresar?</h5>
                 <div class="text-center">
                   <button class="btn button-lila mb-2 text-uppercase rounded-pill btn-sm" data-dismiss="modal"
-                    onclick="play()">Ingresar con música</button>
+                    onclick="Play()">Ingresar con música</button>
                   <button class="btn button-lila mb-2 text-uppercase rounded-pill btn-sm" data-dismiss="modal"
                     aria-label="Close">Ingresar sin música</button>
                 </div>
@@ -235,7 +237,8 @@
       Tu navegador no soporta la reproducción de audio.
     </audio>
     <div>
-      <button class="music-play border-0 " type="button" onclick="Play()"><i class="nf nf-fa-music"></i></button>
+      <button class="music-play border-0 " type="button" onclick="Play()"><i id="music-icon"
+          class="nf nf-md-music_off"></i></button>
     </div>
     <!-- /audio -->
 
@@ -685,20 +688,19 @@
       $('#audioModal').modal('toggle')
     });
   </script>
-  <script>
-    function play() {
-      var audio = document.getElementById("audio");
-      audio.play();
-    }
-  </script>
   <script type="text/javascript">
     function Play() {
       var myAudio = document.getElementById("audio");
+      const element = document.getElementById("music-icon")
       if (myAudio.paused) {
         myAudio.play();
+        element.classList.remove("nf-md-music_off")
+        element.classList.add("nf-fa-music")
       }
       else {
         myAudio.pause();
+        element.classList.remove("nf-fa-music")
+        element.classList.add("nf-md-music_off")
       }
     }
   </script>
